@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Véios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+    <article>
+        <div>
+            <p>
+                Ano de nascimento: <input type="number" name="ano" id="ano">
+            </p>
+        </div>
+        <div>
+            <p>
+                Sexo: <input type="radio" name="sexohihi" id="homem" checked>
+                <label for="homem">Homem</label>
+                <input type="radio" name="sexohihi" id="mulher">
+                <label for="mulher">Mulher</label>
+            </p>
+            <p><input type="button" value="Resultado" onclick="resultado()"></p>
+        </div>
+        <div id="resultado">
+        </div>
+    </article>
+    <script>
+        function resultado() {
+            let date = new Date()
+            let ano = date.getFullYear()
+            let cano = window.document.getElementById('ano')
+            let resultado = window.document.getElementById('resultado')
+            if (cano.value.length == 0 || cano.value > ano) {
+                alert('VAI TOMAR NO TEU CU PORRA')
+            } else {
+                let sexo = document.getElementsByName('sexohihi')
+                let idade = ano - Number(cano.value)
+                let sex = ''
+                let img = document.createElement('img')
+                img.setAttribute('id', 'imagem')
+
+                if (sexo[0].checked) {
+                    sex = 'Homem'
+                    if (idade >= 0 && idade < 10) {
+                        img.setAttribute('src', 'foto-bebe-m.png')
+                    } else if (idade >= 10 && idade < 21) {
+                        img.setAttribute('src', 'foto-jovem-m.png')
+                    } else if (idade >= 21 < 60) {
+                        img.setAttribute('src', 'foto-adulto-m.png')
+                    } else {
+                        img.setAttribute('src', 'foto-idoso-m.png')
+                    }
+                }   else {
+                    sex = 'Mulher'
+                    if (idade >= 0 && idade < 10) {
+                        img.setAttribute('src', 'foto-bebe-f.png')
+                    } else if (idade >= 10 && idade < 21) {
+                        img.setAttribute('src', 'pasta/foto-jovem-f.png')
+                    } else if (idade >= 21 < 60) {
+                        img.setAttribute('src', 'foto-adulto-f.png')
+                    } else {
+                        img.setAttribute('src', 'foto-idoso-f.png')
+                    }
+                } 
+                resultado.innerHTML = `${sex} com ${idade} anos`
+                resultado.appendChild(img)
+            }
+        }
+    </script>
+</body>
+</html>

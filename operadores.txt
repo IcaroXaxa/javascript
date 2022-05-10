@@ -1,0 +1,3 @@
+=== - Igualdade restrita. Analisa se dois objetos são do mesmo valor e tipo.
+&& - Operador de Conjunção. É o mesmo que o "and" do python.
+|| - Operador de Disjunção. É o mesmo que o "or" do python.

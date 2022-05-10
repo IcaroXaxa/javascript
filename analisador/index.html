@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        @charset "UTF-8";
+
+        body {
+            background-color: rgb(0, 150, 255);
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 100px;
+            color: white;
+        }
+
+        article {
+            background-color: white;
+            border-radius: 10px;
+            padding: 100px;
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+    <script src="jabascripto.js"></script>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <article>
+        <div>
+            <p>Número: <input type="number" name="num" id="num"> <input type="button" value="Gerar" onclick="tabuada()"></p>
+            
+        </div>
+        <div>
+            <select name="tab" id="tab" size="5"></select>
+        </div>
+        <div>
+            <input type="button" value="Finalizar" onclick="resultados()">
+            <p id="total"></p>
+            <p id="maior"></p>
+            <p id="menor"></p>
+            <p id="soma"></p>
+            <p id="media"></p>
+        </div>
+    </article>
+</body>
+</html>

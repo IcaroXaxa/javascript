@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeTRAN</title>
+    <style>
+        @import url('httpsfonts.googleapis.comcss2family=Montserrat&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: linear-gradient(to right,#09395B, #023859, #002C4B);
+            color: #EFDFAE;
+        }
+
+        strong {
+            color: rgb(231, 197, 110);
+        }
+    </style>
+</head>
+<body>
+    <h1>ddD</h1>
+    VELOCIDADE: <input type="number" name="txtvelocidade" id="txtvelocidade" style="width: 40px;"> <strong>KM/h</strong>   
+    <input type="button" value="Resultado" onclick="calculo()">
+    <div id="resultado"></div>
+    <script>
+    function calculo() {
+        let txtv = window.document.getElementById('txtvelocidade')
+        let resultado = window.document.querySelector('div#resultado')
+        let velocidade = Number(txtv.value)
+        resultado.innerHTML = `<p>Sua velocidade atual é de ${velocidade}KM/h</p>`
+        if (velocidade > 60) {
+            resultado.innerHTML += `<p>Multa</p>`
+        } else {
+            resultado.innerHTML += `<p>Pode continuar</p>`
+        }
+        resultado.innerHTML += `<p>Dirija sempre com cinto de segurança</p>`
+    }
+    </script>
+</body>
+</html>

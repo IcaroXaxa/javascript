@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="fundo">
+    <h1>Hora do Dia</h1>
+    <article>
+        <p id="hora"></p>
+        <p id="bomdia"></p>
+    </article>
+    <script>
+        let date = new Date()
+        horario = date.getHours() + 1
+
+        if (horario >= 24) {
+            horario = horario - 24
+        }
+
+        let fundo = window.document.getElementById('fundo')
+        let hora = window.document.getElementById('hora')
+        let bomdia = window.document.getElementById('bomdia')
+
+        if (horario >= 6 && horario < 12) {
+            fundo.style.backgroundColor = 'rgb(167, 164, 30)'
+            bomdia.innerText = 'Bom dia'
+        } else if (horario >= 12 && horario < 18) {
+            fundo.style.backgroundColor = 'rgb(180, 117, 35)'
+            bomdia.innerText = 'Boa tarde'
+        } else if (horario >= 18 && horario < 24) {
+            fundo.style.backgroundColor = 'rgb(70, 70, 70)'
+            bomdia.innerText = 'Boa noite'
+        } else if (horario >= 0 && horario < 6) {
+            fundo.style.backgroundColor = 'rgb(0, 0, 0)'
+            bomdia.innerText = 'Boa madrugada'
+        } else {
+            fundo.style.backgroundColor = 'rgb(40, 168, 62)'
+            bomdia.innerText = 'hjijninhi'
+        }
+
+        hora.innerText = `Agora são ${horario} horas.`
+    </script>
+
+</body>
+</html>
